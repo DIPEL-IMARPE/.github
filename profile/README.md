@@ -1,5 +1,3 @@
-# DIPEL-IMARPE Repository
-
 <p align="center">
   <img src="https://img.shields.io/badge/IMARPE-DIPEL--IMARPE-0B2D4D?style=for-the-badge" alt="DIPEL-IMARPE"/>
   <img src="https://img.shields.io/badge/Pelagic%20Resources-Research-007C89?style=for-the-badge" alt="Pelagic resources"/>
