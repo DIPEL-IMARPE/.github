@@ -1,164 +1,256 @@
+Reproducible software, analytical workflows, technical protocols, and assessment reports developed by the **Dirección de Investigaciones del Subsistema Pelágico (DIPEL)** of the **Instituto del Mar del Perú (IMARPE)**.
+The organization uses GitHub to document and maintain analytical methods, source code, report-generation systems, reusable software, and institutional standards for pelagic fisheries research and stock assessment.
+
+## Repository naming convention
+
+Repositories associated with a particular species, stock, or assessment unit follow the structure:
+
+```text
+speciesSTOCK-analysis-or-product-repository-type
+```
+
+The species and stock codes are written together, without a hyphen. The remaining components are separated with hyphens and describe the analytical purpose and the repository class.
+
+```text
+<species><STOCK>-<analysis-or-product>-<repository-type>
+```
+
+### Naming components
+
+| Component | Format | Function | Examples |
+|---|---|---|---|
+| `species` | Lowercase abbreviation | Identifies the species or resource group | `anc`, `jjm`, `spb`, `cdf`, `pcm`, `pel` |
+| `STOCK` | Uppercase abbreviation | Identifies the stock, assessment unit, or geographic domain | `NC`, `SUR`, `TP`, `SP` |
+| `analysis-or-product` | Lowercase kebab-case | Describes the method, model, indicator, process, or product | `cpue-standardization`, `survey-indicators`, `stock-assessment` |
+| `repository-type` | Controlled final term | Identifies the principal function of the repository | `protocol`, `manual`, `workflow`, `report` |
+
+### Resource codes currently used
+
+| Code | Resource |
+|---|---|
+| `anc` | Peruvian anchoveta |
+| `jjm` | Jack mackerel / jurel |
+| `spb` | Bonito |
+| `cdf` | Common dolphinfish / perico |
+| `pcm` | Pacific chub mackerel / caballa |
+| `pel` | Pelagic resources |
+
+### Stock and assessment-unit codes
+
+| Code | Assessment unit |
+|---|---|
+| `NC` | North–central stock or assessment unit |
+| `SUR` | Southern stock or assessment unit |
+| `TP` | National Peruvian assessment domain |
+| `SP` | Peruvian stock |
+
+The precise biological and geographic definition of each assessment unit should also be documented in the corresponding repository README and metadata.
+
+### Repository-type vocabulary
+
+| Type | Use |
+|---|---|
+| `protocol` | Normative methodological documents that define standardized scientific or technical procedures |
+| `manual` | Operational instructions, user guides, digitization guides, and step-by-step procedures |
+| `workflow` | Reproducible analytical pipelines that transform data into indicators, models, or assessment outputs |
+| `report` | Reproducible systems for generating technical or national assessment reports |
+
+### Examples
+
+```text
+ancNC-tac-decision-table-protocol
+│  │  └─────────────── methodological protocol
+│  └────────────────── north–central stock
+└───────────────────── Peruvian anchoveta
+```
+
+```text
+pelTP-ebfp-fishery-manual
+│  │  └─────────────── operational digitization manual
+│  └────────────────── national Peruvian assessment domain
+└───────────────────── pelagic resources
+```
+
+```text
+cdfTP-cpue-sdmtmb-workflow
+│  │  └─────────────── reproducible CPUE workflow using sdmTMB
+│  └────────────────── national Peruvian assessment domain
+└───────────────────── common dolphinfish / perico
+```
+
+```text
+ancSUR-national-assessment-report
+│  │   └────────────── reproducible national assessment report
+│  └────────────────── southern stock
+└───────────────────── Peruvian anchoveta
+```
+
+Packages, organization-level repositories, templates, handbooks, and websites are exempt from the species–stock prefix when their scope covers multiple resources or the organization as a whole. Examples include `pelagicSurvey`, `PBPtools`, `.handbook`, and `dipel-imarpe.github.io`.
+
+---
+
 ## Repository map
 
 | Section | Content | Access |
 |---|---|---|
-| 📦 Packages | R, Python, and C++ tools for marine and fisheries analysis | [View section](#-packages) |
-| 🔁 Analytical processes | Reproducible pipelines for technical analyses | [View section](#-analytical-processes) |
-| 🐟 Resource reports | Reports and workflows organized by pelagic resource or stock | [View section](#-resource-reports) |
-| 📄 Operational reports | Reproducible technical and institutional reports | [View section](#-operational-reports) |
-| 📊 Dashboards and apps | Web applications and visual tools | [View section](#-dashboards-and-apps) |
-| ✍️ Manuscripts | Scientific papers and reproducible publication workflows | [View section](#️-manuscripts) |
-| 🏛 Institutional repositories | Templates, handbook, profile, workflows, and environments | [View section](#-institutional-repositories) |
+| 📦 Packages | R, Python, and C++ tools for marine and fisheries analysis | [View section](#packages) |
+| 📘 Protocols and manuals | Standardized methodological protocols, operational manuals, and decision procedures | [View section](#protocols-and-manuals) |
+| 🔁 Analytical processes | Reproducible pipelines for technical analyses | [View section](#analytical-processes) |
+| 🐟 Resource reports | Reports and workflows organized by pelagic resource or stock | [View section](#resource-reports) |
+| 📄 Operational reports | Reproducible technical and institutional reports | [View section](#operational-reports) |
+| 📊 Dashboards and apps | Web applications and visual tools | [View section](#dashboards-and-apps) |
+| ✍️ Manuscripts | Scientific papers and reproducible publication workflows | [View section](#manuscripts) |
+| 🏛 Institutional repositories | Templates, handbook, profile, workflows, and environments | [View section](#institutional-repositories) |
 
-> **Data policy:** raw or restricted institutional data are not stored in public GitHub repositories. GitHub is used for code, metadata, templates, documentation, workflows, and reproducible research structures.
+> **Data policy:** Raw, confidential, sensitive, or restricted institutional data are not stored in public GitHub repositories. GitHub is used for source code, documentation, metadata, templates, analytical workflows, reproducible examples, and research software. When examples require data, repositories should use simulated, aggregated, anonymized, or openly licensed datasets.
 
 ---
+
+<a id="packages"></a>
 
 ## 📦 Packages
 
-R, Python, Julia and C++ tools for marine and fisheries analysis.
+Reusable R tools supporting pelagic surveys, fishing-logbook data, biomass estimation, retrospective comparisons, population projections, and catch-advice calculations.
 
-| Repository | Programming language  | Main use | Access |
+| Repository | Main purpose | Primary language | Access |
 |---|---|---|---|
-| `pelagicSurvey` |   |Pelagic survey workflows | [here](https://github.com/DIPEL-IMARPE/pelagicSurvey) |
-| `nbSurvey`      |   |Biomass, abundance, and survey indicators | [here](https://github.com/DIPEL-IMARPE/nbSurvey) |
-| `retroSurvey`   |   |Retrospective survey comparisons | [here](https://github.com/DIPEL-IMARPE/retroSurvey) |
-| `tableSurvey`   |   |Standard tables for technical outputs | [here](https://github.com/DIPEL-IMARPE/tableSurvey) |
-| `catchSurvey`   |   |Catch comparison and monitoring workflows | [here](https://github.com/DIPEL-IMARPE/catchSurvey) |
-| `popeSurvey`    |   |Population and survey-based estimation tools | [here](https://github.com/DIPEL-IMARPE/popeSurvey) |
-|---|---|---|---|
-| `marinepy-tools` |  | Marine data processing and visualization | [here](https://github.com/DIPEL-IMARPE/marinepy-tools) |
-| `pelagic-ml`     |  | Machine learning workflows for pelagic resources | [here](https://github.com/DIPEL-IMARPE/pelagic-ml) |
-|---|---|---|---|
-| `pelagic-tmb`    |   |TMB/C++ templates for population dynamics and stock assessment | [here](https://github.com/DIPEL-IMARPE/pelagic-tmb) |
-| `marine-sim`     |    |High-performance simulation tools for marine population models | [here](https://github.com/DIPEL-IMARPE/marine-sim) |
+| `pelagicSurvey` | Tools for processing, analyzing, and visualizing biological and acoustic information from pelagic surveys | R | [Repository](https://github.com/DIPEL-IMARPE/pelagicSurvey) |
+| `PBPtools` | Tools for processing, analyzing, and visualizing data from the Programa de Bitácoras de Pesca | R | [Repository](https://github.com/DIPEL-IMARPE/PBPtools) |
+| `retroSurvey` | Retrospective comparisons of scientific surveys, including coverage, spatial structure, and indicator consistency | R | [Repository](https://github.com/DIPEL-IMARPE/retroSurvey) |
+| `popeProjection` | Population projection tools based on Pope-type cohort and catch calculations | R | [Repository](https://github.com/DIPEL-IMARPE/popeProjection) |
+| `TAC` | Tools supporting total allowable catch calculations, scenarios, and decision outputs | — | [Repository](https://github.com/DIPEL-IMARPE/TAC) |
+| `TBE` | Automation tools for analyzing pelagic acoustic-survey data and estimating biomass | R | [Repository](https://github.com/DIPEL-IMARPE/TBE) |
 
 ---
+
+<a id="protocols-and-manuals"></a>
+
+## 📘 Protocols and manuals
+
+Methodological standards and operational documents used to standardize stock assessments, decision processes, and the digitization of biological and fishery information. Use `protocol` for normative methodologies and `manual` for step-by-step operational guidance.
+
+| Repository | Main purpose | Primary language | Access |
+|---|---|---|---|
+| `jjmSP-stock-assessment-protocol` | Protocol for the stock assessment of Peruvian jack mackerel | TeX | [Repository](https://github.com/DIPEL-IMARPE/jjmSP-stock-assessment-protocol) |
+| `pelTP-ebfp-fishery-protocol` | Manuals for digitizing biological and fishery information developed under the Estimation of Biological and Fishery Parameters project | TeX | [Repository](https://github.com/DIPEL-IMARPE/pelTP-ebfp-fishery-protocol) |
+| `ancNC-tac-decision-table-protocol` | Protocol for constructing and applying total allowable catch decision tables for the north–central anchoveta stock | TeX | [Repository](https://github.com/DIPEL-IMARPE/ancNC-tac-decision-table-protocol) |
+
+> **Naming note:** Because `pelTP-ebfp-fishery-protocol` contains operational digitization manuals, `pelTP-ebfp-fishery-manual` would be the more specific name under the controlled repository-type vocabulary.
+
+---
+
+<a id="analytical-processes"></a>
 
 ## 🔁 Analytical processes
 
-Reproducible pipelines for technical analyses.
+Reproducible pipelines for biological and fishery indicators, CPUE standardization, selectivity, catch-at-length analysis, and stock assessment.
 
-| Repository | Main use | Access |
-|---|---|---|
-| `cpue-standardization` | CPUE standardization workflows | [here](https://github.com/DIPEL-IMARPE/cpue-standardization) |
-| `selectivity-analysis` | Selectivity estimation and diagnostics | [here](https://github.com/DIPEL-IMARPE/selectivity-analysis) |
-| `survey-indices` | Acoustic and biological survey index estimation | [here](https://github.com/DIPEL-IMARPE/survey-indices) |
-| `length-composition` | Length frequencies, length structure, and juvenile indicators | [here](https://github.com/DIPEL-IMARPE/length-composition) |
-| `environmental-indicators` | Environmental indicators for pelagic resources | [here](https://github.com/DIPEL-IMARPE/environmental-indicators) |
-| `spatiotemporal-fisheries` | Spatial and temporal analysis of catch, effort, and fishing grounds | [here](https://github.com/DIPEL-IMARPE/spatiotemporal-fisheries) |
+| Repository | Main purpose | Primary language | Access |
+|---|---|---|---|
+| `spbTP-selectivity-at-size-workflow` | Estimation and diagnostics of selectivity-at-size for bonito | R | [Repository](https://github.com/DIPEL-IMARPE/spbTP-selectivity-at-size-workflow) |
+| `ancNC-survey-indicators-workflow` | Estimation of acoustic, biological, population, and spatial survey indicators for the north–central anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-survey-indicators-workflow) |
+| `ancSUR-cpue-standardization-workflow` | Standardization of catch per unit effort for the southern anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancSUR-cpue-standardization-workflow) |
+| `cdfTP-cpue-sdmtmb-workflow` | Spatio-temporal CPUE standardization for common dolphinfish using `sdmTMB` | R | [Repository](https://github.com/DIPEL-IMARPE/cdfTP-cpue-sdmtmb-workflow) |
+| `ancNC-ss3-stock-assessment-workflow` | Stock Synthesis 3 assessment workflow for the north–central anchoveta stock | Scheme | [Repository](https://github.com/DIPEL-IMARPE/ancNC-ss3-stock-assessment-workflow) |
+| `ancNC-SPiCT-stock-assessment-workflow` | SPiCT stock-assessment workflow for the north–central anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-SPiCT-stock-assessment-workflow) |
+| `ancNC-catch-at-length-workflow` | Processing, standardization, and analysis of catch-at-length information for the north–central anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-catch-at-length-workflow) |
 
 ---
+
+<a id="resource-reports"></a>
 
 ## 🐟 Resource reports
 
-Reports and workflows organized by pelagic resource or stock.
+Assessment reports and supporting report-generation systems organized by pelagic resource or stock.
 
-### North-Center Anchoveta Stock `ancnc`
+### North–central anchoveta stock `ancNC`
 
-| Repository | Main use | Access |
-|---|---|---|
-| `anchNC_survey_based_assessment` | Survey-based assessment of the north-center anchoveta stock | [here](https://github.com/imarpe/anchNC_survey_based_assessment) |
-| `anchNC_spict_assessment` | SPiCT-based assessment of the north-center anchoveta stock | [here](https://github.com/DIPEL-IMARPE/anchNC_spict_assessment) |
-| `ancnc-indicators` | Biomass, abundance, recruitment, juveniles, and spatial indicators | [here](https://github.com/DIPEL-IMARPE/ancnc-indicators) |
-| `ancnc-report` | Reproducible report for the north-center anchoveta stock | [here](https://github.com/DIPEL-IMARPE/ancnc-report) |
+| Repository | Main purpose | Primary language | Access |
+|---|---|---|---|
+| `ancNC-national-assessment-report` | National assessment of the north–central anchoveta stock based primarily on scientific survey information | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-national-assessment-report) |
 
-### South Anchoveta Stock `ancsr`
+### Southern anchoveta stock `ancSUR`
 
-| Repository | Main use | Access |
-|---|---|---|
-| `anchS_assessment` | Assessment of the southern anchoveta stock | [here](https://github.com/DIPEL-IMARPE/anchS_assessment) |
-| `ancsr-indicators` | Biological, fishery, spatial, and environmental indicators | [here](https://github.com/DIPEL-IMARPE/ancsr-indicators) |
-| `ancsr-report` | Reproducible report for southern anchoveta | [here](https://github.com/DIPEL-IMARPE/ancsr-report) |
+| Repository | Main purpose | Primary language | Access |
+|---|---|---|---|
+| `ancSUR-national-assessment-report` | National assessment report for the southern anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancSUR-national-assessment-report) |
 
-### Peruvian Jack Mackerel Stock `jjm`
+### Pacific chub mackerel `pcmTP`
 
-| Repository | Main use | Access |
-|---|---|---|
-| `jjm-assessment` | Assessment workflow for Peruvian jack mackerel | [here](https://github.com/DIPEL-IMARPE/jjm-assessment) |
-| `jjm-indicators` | Catch, effort, distribution, biological, and population indicators | [here](https://github.com/DIPEL-IMARPE/jjm-indicators) |
-| `jjm-report` | Reproducible technical report for jack mackerel | [here](https://github.com/DIPEL-IMARPE/jjm-report) |
+| Repository | Main purpose | Primary language | Access |
+|---|---|---|---|
+| `pcmTP-national-assessment-report` | National assessment report for Pacific chub mackerel / caballa | Visual Basic 6.0 | [Repository](https://github.com/DIPEL-IMARPE/pcmTP-national-assessment-report) |
 
-### Caballa / Chub mackerel
+### Bonito `spbTP`
 
-| Repository | Main use | Access |
-|---|---|---|
-| `caballa-assessment` | Assessment workflow for caballa | [here](https://github.com/DIPEL-IMARPE/caballa-assessment) |
-| `caballa-indicators` | Biological, fishery, and spatial indicators | [here](https://github.com/DIPEL-IMARPE/caballa-indicators) |
-| `caballa-report` | Reproducible technical report for caballa | [here](https://github.com/DIPEL-IMARPE/caballa-report) |
+| Repository | Main purpose | Primary language | Access |
+|---|---|---|---|
+| `spbTP-national-assessment-report` | National assessment report for bonito | Scheme | [Repository](https://github.com/DIPEL-IMARPE/spbTP-national-assessment-report) |
 
-### Bonito
+### Common dolphinfish `cdfTP`
 
-| Repository | Main use | Access |
-|---|---|---|
-| `bonito-indicators` | Catch, effort, biological, spatial, and environmental indicators | [here](https://github.com/DIPEL-IMARPE/bonito-indicators) |
-| `bonito-distribution` | Spatio-temporal distribution and environmental association workflows | [here](https://github.com/DIPEL-IMARPE/bonito-distribution) |
-| `bonito-report` | Reproducible technical report for bonito | [here](https://github.com/DIPEL-IMARPE/bonito-report) |
-
-### Perico / Dolphinfish
-
-| Repository | Main use | Access |
-|---|---|---|
-| `perico-indicators` | Fishery, biological, and spatial indicators | [here](https://github.com/DIPEL-IMARPE/perico-indicators) |
-| `perico-distribution` | Spatial distribution and environmental association workflows | [here](https://github.com/DIPEL-IMARPE/perico-distribution) |
-| `perico-report` | Reproducible technical report for perico | [here](https://github.com/DIPEL-IMARPE/perico-report) |
+| Repository | Main purpose | Primary language | Access |
+|---|---|---|---|
+| `cdfTP-national-assessment-report` | National assessment of common dolphinfish / perico using a JABBA reference model | R | [Repository](https://github.com/DIPEL-IMARPE/cdfTP-national-assessment-report) |
 
 ---
+
+<a id="operational-reports"></a>
 
 ## 📄 Operational reports
 
-Reproducible technical and institutional reports.
+Reproducible technical and institutional reports that are not restricted to a single stock-assessment repository.
 
-| Repository | Main use | Access |
-|---|---|---|
-| `pelagic-status-report` | Integrated status report for pelagic resources | [here](https://github.com/DIPEL-IMARPE/pelagic-status-report) |
-| `cruise-report` | Reproducible report template for scientific surveys and cruises | [here](https://github.com/DIPEL-IMARPE/cruise-report) |
-| `juvenile-catch-report` | Technical report for juvenile catch monitoring | [here](https://github.com/DIPEL-IMARPE/juvenile-catch-report) |
-| `fishing-season-report` | Report for fishing seasons and operational summaries | [here](https://github.com/DIPEL-IMARPE/fishing-season-report) |
-| `technical-note-template` | Template for short technical notes | [here](https://github.com/DIPEL-IMARPE/technical-note-template) |
+_No repositories are currently listed in this category._
 
 ---
+
+<a id="dashboards-and-apps"></a>
 
 ## 📊 Dashboards and apps
 
-Web applications and visual tools.
+Web applications, interactive dashboards, and visual tools for disseminating indicators and analytical outputs.
 
-| Repository | Main use | Access |
-|---|---|---|
-| `pelagic-dashboard` | Main dashboard for pelagic resource indicators | [here](https://github.com/DIPEL-IMARPE/pelagic-dashboard) |
-| `anchovy-survey-viewer` | Viewer for anchoveta survey products and spatial indicators | [here](https://github.com/DIPEL-IMARPE/anchovy-survey-viewer) |
-| `juvenile-alert-app` | Dashboard for juvenile catch indicators and alerts | [here](https://github.com/DIPEL-IMARPE/juvenile-alert-app) |
-| `environment-viewer` | Viewer for environmental indicators and oceanographic layers | [here](https://github.com/DIPEL-IMARPE/environment-viewer) |
-| `fishery-map-viewer` | Viewer for catch, effort, and fishing grounds | [here](https://github.com/DIPEL-IMARPE/fishery-map-viewer) |
+_No repositories are currently listed in this category._
 
 ---
+
+<a id="manuscripts"></a>
 
 ## ✍️ Manuscripts
 
 Scientific papers and reproducible publication workflows.
 
-| Repository | Main use | Access |
-|---|---|---|
-| `paper-anchovy-health-index` | Manuscript workflow for anchoveta health indicators | [here](https://github.com/DIPEL-IMARPE/paper-anchovy-health-index) |
-| `paper-spf-dynamics` | Manuscript workflow on small pelagic fish dynamics | [here](https://github.com/DIPEL-IMARPE/paper-spf-dynamics) |
-| `paper-juvenile-catch-environment` | Manuscript workflow on environmental variability and juvenile catch | [here](https://github.com/DIPEL-IMARPE/paper-juvenile-catch-environment) |
-| `paper-pelagic-indicators` | Manuscript workflow on integrated indicators for pelagic resources | [here](https://github.com/DIPEL-IMARPE/paper-pelagic-indicators) |
+_No repositories are currently listed in this category._
 
 ---
 
+<a id="institutional-repositories"></a>
+
 ## 🏛 Institutional repositories
 
-Templates, handbook, profile, workflows, and environments.
+Organization-level repositories for governance, templates, documentation, shared workflows, and public communication.
 
-| Repository | Main use | Access |
-|---|---|---|
-| `.github` | Public organization profile | [here](https://github.com/DIPEL-IMARPE/.github) |
-| `dipel-handbook` | Internal handbook: repository rules, roles, branches, review, releases, and data policy | [here](https://github.com/DIPEL-IMARPE/dipel-handbook) |
-| `repo-templates` | README templates and demo QMD files for all repository types | [here](https://github.com/DIPEL-IMARPE/repo-templates) |
-| `analysis-template` | Base template for reproducible analytical workflows | [here](https://github.com/DIPEL-IMARPE/analysis-template) |
-| `ci-workflows` | Reusable GitHub Actions for checks, rendering, tests, and releases | [here](https://github.com/DIPEL-IMARPE/ci-workflows) |
-| `devcontainers` | Reproducible computing environments for R, Python, Quarto, spatial analysis, and stock assessment | [here](https://github.com/DIPEL-IMARPE/devcontainers) |
-| `DIPEL-IMARPE.github.io` | Public web page for DIPEL-IMARPE | [here](https://github.com/DIPEL-IMARPE/DIPEL-IMARPE.github.io) |
+| Repository | Main purpose | Primary language | Access |
+|---|---|---|---|
+| `.github` | Public organization profile, contribution guidance, and shared GitHub configuration | — | [Repository](https://github.com/DIPEL-IMARPE/.github) |
+| `.handbook` | Institutional handbook for repository governance, roles, branches, review, releases, documentation, and data policy | — | [Repository](https://github.com/DIPEL-IMARPE/.handbook) |
+| `.template_analytical_processes` | Base template for reproducible analytical workflows in DIPEL-IMARPE | R | [Repository](https://github.com/DIPEL-IMARPE/.template_analytical_processes) |
+| `dipel-imarpe.github.io` | Public website for DIPEL-IMARPE projects, software, workflows, and documentation | HTML | [Repository](https://github.com/DIPEL-IMARPE/dipel-imarpe.github.io) |
+
+---
+
+## Repository documentation requirements
+
+Each analytical repository should include, at minimum:
+
+1. A concise statement of its scientific or operational purpose.
+2. The species, stock, assessment unit, and geographic scope.
+3. The input-data requirements and data-access restrictions.
+4. A description of the analytical workflow and principal outputs.
+5. Reproducibility instructions, including software and package versions.
+6. A minimal executable example using public, simulated, anonymized, or aggregated data.
+7. The responsible technical team, citation information, license, and contribution rules.
 
 ---
 
