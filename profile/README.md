@@ -17,20 +17,6 @@ Reproducible software, analytical workflows, technical protocols, and assessment
 
 ---
 
-## Repository documentation requirements
-
-Each analytical repository should include, at minimum:
-
-1. A concise statement of its scientific or operational purpose.
-2. The species, stock, assessment unit, and geographic scope.
-3. The input-data requirements and data-access restrictions.
-4. A description of the analytical workflow and principal outputs.
-5. Reproducibility instructions, including software and package versions.
-6. A minimal executable example using public, simulated, anonymized, or aggregated data.
-7. The responsible technical team, citation information, license, and contribution rules.
-
----
-
 <p align="center">
   <strong>DIPEL-IMARPE</strong><br>
   Dirección de Investigaciones del Subsistema Pelágico · Instituto del Mar del Perú
