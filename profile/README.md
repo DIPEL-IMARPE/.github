@@ -3,16 +3,6 @@
   <img src="https://img.shields.io/badge/Pelagic%20Resources-Research-007C89?style=for-the-badge" alt="Pelagic resources"/>
   <img src="https://img.shields.io/badge/Reproducible-Workflows-0B2D4D?style=for-the-badge" alt="Reproducible workflows"/>
 </p>
-
-<p align="center">
-  <strong>Dirección de Investigaciones del Subsistema Pelágico</strong><br>
-  <strong>Instituto del Mar del Perú — IMARPE</strong>
-</p>
-
-<p align="center">
-  Scientific software, analytical workflows, resource reports, operational reports, dashboards, manuscripts, and institutional templates for pelagic resources research.
-</p>
-
 ---
 
 ## Repository map
