@@ -1,5 +1,4 @@
-Reproducible software, analytical workflows, technical protocols, and assessment reports developed by the **Dirección de Investigaciones del Subsistema Pelágico (DIPEL)** of the **Instituto del Mar del Perú (IMARPE)**.
-The organization uses GitHub to document and maintain analytical methods, source code, report-generation systems, reusable software, and institutional standards for pelagic fisheries research and stock assessment.
+Reproducible software, analytical workflows, technical protocols, and assessment reports developed by the Dirección de Investigaciones del Subsistema Pelágico (DIPEL) of the Instituto del Mar del Perú (IMARPE). The organization uses GitHub to document and maintain analytical methods, source code, report-generation systems, reusable software, and institutional standards for pelagic fisheries research and stock assessment.
 
 ## Repository naming convention
 
