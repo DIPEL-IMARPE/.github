@@ -28,7 +28,7 @@ The species and stock codes are written together, without a hyphen. The remainin
 
 | Code | Resource |
 |---|---|
-| `anc` | Peruvian anchoveta |
+| `anc` | Peruvian anchovy |
 | `jjm` | Jack mackerel / jurel |
 | `spb` | Bonito |
 | `cdf` | Common dolphinfish / perico |
@@ -46,43 +46,18 @@ The species and stock codes are written together, without a hyphen. The remainin
 
 The precise biological and geographic definition of each assessment unit should also be documented in the corresponding repository README and metadata.
 
-### Repository-type vocabulary
-
-| Type | Use |
-|---|---|
-| `protocol` | Normative methodological documents that define standardized scientific or technical procedures |
-| `manual` | Operational instructions, user guides, digitization guides, and step-by-step procedures |
-| `workflow` | Reproducible analytical pipelines that transform data into indicators, models, or assessment outputs |
-| `report` | Reproducible systems for generating technical or national assessment reports |
-
 ### Examples
 
 ```text
-ancNC-tac-decision-table-protocol
-│  │  └─────────────── methodological protocol
-│  └────────────────── north–central stock
-└───────────────────── Peruvian anchoveta
-```
-
-```text
-pelTP-ebfp-fishery-manual
-│  │  └─────────────── operational digitization manual
-│  └────────────────── national Peruvian assessment domain
-└───────────────────── pelagic resources
-```
-
-```text
 cdfTP-cpue-sdmtmb-workflow
-│  │  └─────────────── reproducible CPUE workflow using sdmTMB
-│  └────────────────── national Peruvian assessment domain
-└───────────────────── common dolphinfish / perico
-```
-
-```text
-ancSUR-national-assessment-report
-│  │   └────────────── reproducible national assessment report
-│  └────────────────── southern stock
-└───────────────────── Peruvian anchoveta
+│  │       │       │
+│  │       │       └──────── repository type: reproducible analytical workflow
+│  │       │
+│  │       └──────────────── analytical method: CPUE standardization using sdmTMB
+│  │
+│  └──────────────────────── stock or management unit: Peruvian national domain
+│
+└─────────────────────────── species: common dolphinfish / perico
 ```
 
 Packages, organization-level repositories, templates, handbooks, and websites are exempt from the species–stock prefix when their scope covers multiple resources or the organization as a whole. Examples include `pelagicSurvey`, `PBPtools`, `.handbook`, and `dipel-imarpe.github.io`.
@@ -133,7 +108,7 @@ Methodological standards and operational documents used to standardize stock ass
 |---|---|---|---|
 | `jjmSP-stock-assessment-protocol` | Protocol for the stock assessment of Peruvian jack mackerel | TeX | [Repository](https://github.com/DIPEL-IMARPE/jjmSP-stock-assessment-protocol) |
 | `pelTP-ebfp-fishery-protocol` | Manuals for digitizing biological and fishery information developed under the Estimation of Biological and Fishery Parameters project | TeX | [Repository](https://github.com/DIPEL-IMARPE/pelTP-ebfp-fishery-protocol) |
-| `ancNC-tac-decision-table-protocol` | Protocol for constructing and applying total allowable catch decision tables for the north–central anchoveta stock | TeX | [Repository](https://github.com/DIPEL-IMARPE/ancNC-tac-decision-table-protocol) |
+| `ancNC-tac-decision-table-protocol` | Protocol for constructing and applying total allowable catch decision tables for the north–central anchovy stock | TeX | [Repository](https://github.com/DIPEL-IMARPE/ancNC-tac-decision-table-protocol) |
 
 > **Naming note:** Because `pelTP-ebfp-fishery-protocol` contains operational digitization manuals, `pelTP-ebfp-fishery-manual` would be the more specific name under the controlled repository-type vocabulary.
 
@@ -148,12 +123,12 @@ Reproducible pipelines for biological and fishery indicators, CPUE standardizati
 | Repository | Main purpose | Primary language | Access |
 |---|---|---|---|
 | `spbTP-selectivity-at-size-workflow` | Estimation and diagnostics of selectivity-at-size for bonito | R | [Repository](https://github.com/DIPEL-IMARPE/spbTP-selectivity-at-size-workflow) |
-| `ancNC-survey-indicators-workflow` | Estimation of acoustic, biological, population, and spatial survey indicators for the north–central anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-survey-indicators-workflow) |
-| `ancSUR-cpue-standardization-workflow` | Standardization of catch per unit effort for the southern anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancSUR-cpue-standardization-workflow) |
+| `ancNC-survey-indicators-workflow` | Estimation of acoustic, biological, population, and spatial survey indicators for the north–central anchovy stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-survey-indicators-workflow) |
+| `ancSUR-cpue-standardization-workflow` | Standardization of catch per unit effort for the southern anchovy stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancSUR-cpue-standardization-workflow) |
 | `cdfTP-cpue-sdmtmb-workflow` | Spatio-temporal CPUE standardization for common dolphinfish using `sdmTMB` | R | [Repository](https://github.com/DIPEL-IMARPE/cdfTP-cpue-sdmtmb-workflow) |
-| `ancNC-ss3-stock-assessment-workflow` | Stock Synthesis 3 assessment workflow for the north–central anchoveta stock | Scheme | [Repository](https://github.com/DIPEL-IMARPE/ancNC-ss3-stock-assessment-workflow) |
-| `ancNC-SPiCT-stock-assessment-workflow` | SPiCT stock-assessment workflow for the north–central anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-SPiCT-stock-assessment-workflow) |
-| `ancNC-catch-at-length-workflow` | Processing, standardization, and analysis of catch-at-length information for the north–central anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-catch-at-length-workflow) |
+| `ancNC-ss3-stock-assessment-workflow` | Stock Synthesis 3 assessment workflow for the north–central anchovy stock | Scheme | [Repository](https://github.com/DIPEL-IMARPE/ancNC-ss3-stock-assessment-workflow) |
+| `ancNC-SPiCT-stock-assessment-workflow` | SPiCT stock-assessment workflow for the north–central anchovy stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-SPiCT-stock-assessment-workflow) |
+| `ancNC-catch-at-length-workflow` | Processing, standardization, and analysis of catch-at-length information for the north–central anchovy stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-catch-at-length-workflow) |
 
 ---
 
@@ -161,37 +136,15 @@ Reproducible pipelines for biological and fishery indicators, CPUE standardizati
 
 ## 🐟 Resource reports
 
-Assessment reports and supporting report-generation systems organized by pelagic resource or stock.
+Assessment reports and supporting report-generation systems organized by pelagic species and stock or management unit.
 
-### North–central anchoveta stock `ancNC`
-
-| Repository | Main purpose | Primary language | Access |
-|---|---|---|---|
-| `ancNC-national-assessment-report` | National assessment of the north–central anchoveta stock based primarily on scientific survey information | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-national-assessment-report) |
-
-### Southern anchoveta stock `ancSUR`
-
-| Repository | Main purpose | Primary language | Access |
-|---|---|---|---|
-| `ancSUR-national-assessment-report` | National assessment report for the southern anchoveta stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancSUR-national-assessment-report) |
-
-### Pacific chub mackerel `pcmTP`
-
-| Repository | Main purpose | Primary language | Access |
-|---|---|---|---|
-| `pcmTP-national-assessment-report` | National assessment report for Pacific chub mackerel / caballa | Visual Basic 6.0 | [Repository](https://github.com/DIPEL-IMARPE/pcmTP-national-assessment-report) |
-
-### Bonito `spbTP`
-
-| Repository | Main purpose | Primary language | Access |
-|---|---|---|---|
-| `spbTP-national-assessment-report` | National assessment report for bonito | Scheme | [Repository](https://github.com/DIPEL-IMARPE/spbTP-national-assessment-report) |
-
-### Common dolphinfish `cdfTP`
-
-| Repository | Main purpose | Primary language | Access |
-|---|---|---|---|
-| `cdfTP-national-assessment-report` | National assessment of common dolphinfish / perico using a JABBA reference model | R | [Repository](https://github.com/DIPEL-IMARPE/cdfTP-national-assessment-report) |
+| Repository | Species | Stock / management unit | Main purpose | Primary language | Access |
+|:---|:---|:---|:---|:---:|:---:|
+| `ancNC-national-assessment-report` | Peruvian anchovy (*Engraulis ringens*) | North–central stock (`NC`) | National assessment of the north–central anchovy stock based primarily on scientific survey information | R | [Repository](https://github.com/DIPEL-IMARPE/ancNC-national-assessment-report) |
+| `ancSUR-national-assessment-report` | Peruvian anchovy (*Engraulis ringens*) | Southern stock (`SUR`) | National assessment report for the southern anchovy stock | R | [Repository](https://github.com/DIPEL-IMARPE/ancSUR-national-assessment-report) |
+| `pcmTP-national-assessment-report` | Pacific chub mackerel (*Scomber japonicus*) | Peruvian management unit (`TP`) | National assessment report for Pacific chub mackerel | Visual Basic 6.0 | [Repository](https://github.com/DIPEL-IMARPE/pcmTP-national-assessment-report) |
+| `spbTP-national-assessment-report` | Pacific bonito (*Sarda chiliensis*) | Peruvian management unit (`TP`) | National assessment report for Pacific bonito | Scheme | [Repository](https://github.com/DIPEL-IMARPE/spbTP-national-assessment-report) |
+| `cdfTP-national-assessment-report` | Common dolphinfish (*Coryphaena hippurus*) | Peruvian management unit (`TP`) | National assessment of common dolphinfish using a JABBA reference model | R | [Repository](https://github.com/DIPEL-IMARPE/cdfTP-national-assessment-report) |
 
 ---
 
